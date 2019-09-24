@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Poc.Permissionamento.Jwt.Attributes;
+using Poc.Permissionamento.Jwt.Enums;
 
 namespace Poc.Permissionamento.Jwt.Controllers
 {
@@ -13,6 +15,7 @@ namespace Poc.Permissionamento.Jwt.Controllers
     {
         // GET api/values
         [Authorize("Bearer")]
+        [Role(Role.school_b, Role.school_a, Role.school_c)]
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {

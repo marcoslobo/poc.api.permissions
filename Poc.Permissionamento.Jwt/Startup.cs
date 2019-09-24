@@ -58,6 +58,11 @@ namespace Poc.Permissionamento.Jwt
                    .Build());
             });
 
+
+            services.AddSingleton(Configuration);
+            services.AddScoped<JwtService>();
+            
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
